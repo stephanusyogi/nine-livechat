@@ -91,7 +91,7 @@
 
     .chat li {
         width: 280px;
-        margin: 15px 0;
+        margin: 30px 0;
     }
 
     .chat-body p {
