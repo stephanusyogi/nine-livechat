@@ -121,12 +121,12 @@
     }
 
     .primary-font {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 900;
     }
 
     .message {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
         white-space: wrap;
         word-break: break-all;
