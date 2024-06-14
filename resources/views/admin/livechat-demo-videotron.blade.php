@@ -86,7 +86,7 @@
     }
 
     .chat li {
-        width: 400px;
+        width: 280px;
         margin: 15px 0;
     }
 
@@ -118,9 +118,11 @@
 
     .primary-font {
         font-size: 16px;
+        font-weight: 900;
     }
 
     .message {
+        font-weight: 600;
         font-size: 16px;
         white-space: wrap;
         word-break: break-all;
@@ -152,9 +154,9 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        <small class="pull-right text-muted"
+                        {{-- <small class="pull-right text-muted"
                             style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            10:00</small>
+                            10:00</small> --}}
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor sit
                         amet,
@@ -167,9 +169,9 @@
                     <div class="header">
                         <strong class="primary-font"
                             style="color: {{ $event->bubble_color_code_message_name }}">Sarah</strong>
-                        <small class="pull-right text-muted"
+                        {{-- <small class="pull-right text-muted"
                             style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            12:45</small>
+                            12:45</small> --}}
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -184,9 +186,9 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        <small class="pull-right text-muted"
+                        {{-- <small class="pull-right text-muted"
                             style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            08:00</small>
+                            08:00</small> --}}
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor
                         sit amet,
