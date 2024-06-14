@@ -75,6 +75,7 @@
     }
 
     .chat li.left .chat-body:before {
+        z-index: -1;
         position: absolute;
         top: 10px;
         left: -5px;
