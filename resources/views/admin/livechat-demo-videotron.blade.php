@@ -154,9 +154,8 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        {{-- <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            10:00</small> --}}
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}">10:00</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor sit
                         amet,
@@ -169,9 +168,8 @@
                     <div class="header">
                         <strong class="primary-font"
                             style="color: {{ $event->bubble_color_code_message_name }}">Sarah</strong>
-                        {{-- <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            12:45</small> --}}
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}"></i>12:45</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -186,9 +184,8 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        {{-- <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}"><i class="fa fa-clock-o"></i>
-                            08:00</small> --}}
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}">08:00</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor
                         sit amet,

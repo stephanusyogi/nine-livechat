@@ -90,7 +90,7 @@
     }
 
     .chat li {
-        width: 400px;
+        width: 280px;
         margin: 15px 0;
     }
 
@@ -122,10 +122,12 @@
 
     .primary-font {
         font-size: 16px;
+        font-weight: 900;
     }
 
     .message {
         font-size: 16px;
+        font-weight: 600;
         white-space: wrap;
         word-break: break-all;
     }
@@ -260,8 +262,7 @@
                                 <strong class="primary-font"
                                 style="color: ${nameColor}">${message.sender_name.toUpperCase()}</strong>
                                 <small class="pull-right text-muted"
-                                style="color: ${timeColor}"><i class="fa fa-clock-o"></i>
-                                ${formatTime(message.created_at)}</small>
+                                style="color: ${timeColor}">${formatTime(message.created_at)}</small>
                             </div>
                             <p class="message" style="color: ${textColor}">${message.content}</p>
                         </div>
