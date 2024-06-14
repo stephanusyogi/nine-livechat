@@ -58,7 +58,7 @@
         position: relative;
         font-size: 11px;
         padding: 10px;
-        border-radius: 3px;
+        border-radius: 15px;
     }
 
     .chat li .chat-body .header {
@@ -73,7 +73,7 @@
     .chat li.left .chat-body:before {
         position: absolute;
         top: 10px;
-        left: -8px;
+        left: -5px;
         display: inline-block;
         width: 16px;
         height: 16px;
