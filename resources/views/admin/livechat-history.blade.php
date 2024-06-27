@@ -20,7 +20,7 @@
 
     .time {
         font-size: 12px;
-        margin-bottom: 0;
+        margin-bottom: 0px !important;
     }
 
     .chat-message {
