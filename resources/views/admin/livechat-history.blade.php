@@ -6,81 +6,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nine - Livechat</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-        rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('images/user.jpg') }}" />
 </head>
+
 <style>
     body {
+        font-size: 12px;
+        font-family: "Open Sans", sans-serif;
         margin: 0;
         padding: 0;
-        font-family: "Poppins", sans-serif;
     }
 
-    .speech-wrapper {
-        padding: 10px 20px;
+    small,
+    .small {
+        font-size: 12px
     }
 
-    .speech-wrapper .bubble {
-        width: 280px;
-        height: auto;
-        display: block;
-        border-radius: 4px;
-        position: relative;
+    .chat-message {
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 40px;
     }
 
-    .speech-wrapper .bubble .txt {
-        padding: 8px 55px 8px 14px;
-    }
-
-    .speech-wrapper .bubble .txt .name {
-        font-weight: 600;
-        font-size: 12px;
-        margin: 0 0 4px;
-        margin-bottom: 0px;
-    }
-
-    .speech-wrapper .bubble .txt .message {
-        font-size: 12px;
+    .chat {
+        list-style: none;
         margin: 0;
+        padding: 0;
+        /* padding-inline-start: 0; */
     }
 
-    .speech-wrapper .bubble .txt .timestamp {
-        font-size: 8px;
+    .chat li img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50em;
+        -moz-border-radius: 50em;
+        -webkit-border-radius: 50em;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .chat-body {
+        padding-bottom: 20px;
+    }
+
+    .chat li .chat-body {
+        position: relative;
+        font-size: 11px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .chat li .chat-body .header {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #f1f5fc;
+    }
+
+    .chat li .chat-body p {
+        margin: 10px 0;
+    }
+
+    .chat li.left .chat-body:before {
+        z-index: -1;
         position: absolute;
-        bottom: 8px;
-        right: 10px;
-        text-transform: uppercase;
-    }
-
-    .speech-wrapper .bubble .bubble-arrow {
-        position: absolute;
-        width: 0;
-        bottom: 42px;
-        left: -16px;
-        height: 0;
-    }
-
-    .speech-wrapper .bubble .bubble-arrow.alt {
-        right: -2px;
-        bottom: 40px;
-        left: auto;
-    }
-
-    .speech-wrapper .bubble .bubble-arrow:after {
+        top: 20px;
+        left: -5px;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
         content: "";
-        position: absolute;
-        border-radius: 0 20px 0;
-        width: 24px;
-        height: 37px;
-        transform: rotate(154deg);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
     }
 
-    .speech-wrapper .bubble .bubble-arrow.alt:after {
-        transform: rotate(45deg) scaleY(-1);
+    .chat li {
+        width: 280px;
+        margin: 30px 0;
+    }
+
+    .chat-body p {
+        color: #777;
+    }
+
+    .chat-box {
+        position: fixed;
+        bottom: 0;
+        left: 444px;
+        right: 0;
+
+        padding: 15px;
+        border-top: 1px solid #eee;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    .primary-font {
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .message {
+        font-weight: 600;
+        font-size: 20px;
+        white-space: wrap;
+        word-break: break-all;
+    }
+
+    @media (max-width: 600px) {
+        .chat-message {
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .chat li {
+            width: 100%;
+        }
     }
 </style>
 
@@ -89,7 +144,9 @@
         ? 'background: url(' . asset('uploads/' . $event->videotron_background_image) . ');background-size:cover'
         : 'background: ' . $event->videotron_color_code }};">
 
-    <div id="chat-container"></div>
+    <div class="chat-message">
+        <ul class="chat" id="chat-container"></ul>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -110,23 +167,24 @@
             const textColor = "{{ $event->bubble_color_code_message_text }}";
 
             const bubbleArrowStyle = `
-                .speech-wrapper .bubble .bubble-arrow:after {
-                    border: 0 solid transparent;
-                    border-top: 9px solid ${bubbleColor};
+                .chat li.left .chat-body:before {
+                    background: ${bubbleColor};
+                    border-top: 1px solid ${bubbleColor};
+                    border-left: 1px solid ${bubbleColor};
                 }
             `;
             const messageNameStyle = `
-                .speech-wrapper .bubble .txt .name {
+                .primary-font {
                     color: ${nameColor};
                 }
             `;
             const messageTimeStyle = `
-                .speech-wrapper .bubble .txt .timestamp {
+                small {
                     color: ${timeColor};
                 }
             `;
             const messageTextStyle = `
-                .speech-wrapper .bubble .txt .message {
+                .message {
                     color: ${textColor};
                 }
             `;
@@ -158,16 +216,18 @@
             // Function to render a message
             function renderMessage(message) {
                 const messageHtml = `
-                    <div class="speech-wrapper">
-                        <div class="bubble" style="background-color: ${bubbleColor}">
-                            <div class="txt">
-                                <p class="name" style="color: ${nameColor}">${message.sender_name}</p>
-                                <p class="message" style="color: ${textColor}">${message.content}</p>
-                                <span class="timestamp" style="color: ${timeColor}">${formatTime(message.created_at)}</span>
+                    <li class="left speech-wrapper clearfix" data-message-id="${message.id}">
+                        <div class="chat-body clearfix"
+                        style="background-color: ${bubbleColor}">
+                            <div class="header">
+                                <strong class="primary-font"
+                                style="color: ${nameColor}">${message.sender_name.toUpperCase()}</strong>
+                                <small class="pull-right text-muted"
+                                style="color: ${timeColor}">${formatTime(message.created_at)}</small>
                             </div>
-                            <div class="bubble-arrow"></div>
+                            <p class="message" style="color: ${textColor}">${message.content}</p>
                         </div>
-                    </div>
+                    </li>
                 `;
                 document.getElementById('chat-container').innerHTML += messageHtml;
             }
