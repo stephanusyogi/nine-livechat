@@ -65,16 +65,11 @@
         border-radius: 15px;
     }
 
-    .chat li .chat-body .header {
-        padding-bottom: 5px;
-        border-bottom: 1px solid #f1f5fc;
-    }
-
     .chat li .chat-body p {
-        margin: 10px 0;
+        margin: 5px 0 10px 0;
     }
 
-    .chat li.left .chat-body:before {
+    /* .chat li.left .chat-body:before {
         z-index: -1;
         position: absolute;
         top: 20px;
@@ -88,11 +83,11 @@
         -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
-    }
+    } */
 
     .chat li {
         width: 280px;
-        margin: 30px 0;
+        margin: 10px 0;
     }
 
     .chat-body p {
@@ -176,13 +171,13 @@
             const timeColor = "{{ $event->bubble_color_code_message_time }}";
             const textColor = "{{ $event->bubble_color_code_message_text }}";
 
-            const bubbleArrowStyle = `
-                .chat li.left .chat-body:before {
-                    background: ${bubbleColor};
-                    border-top: 1px solid ${bubbleColor};
-                    border-left: 1px solid ${bubbleColor};
-                }
-            `;
+            // const bubbleArrowStyle = `
+        //     .chat li.left .chat-body:before {
+        //         background: ${bubbleColor};
+        //         border-top: 1px solid ${bubbleColor};
+        //         border-left: 1px solid ${bubbleColor};
+        //     }
+        // `;
             const messageNameStyle = `
                 .primary-font {
                     color: ${nameColor};
@@ -262,10 +257,12 @@
                             <div class="header">
                                 <strong class="primary-font"
                                 style="color: ${nameColor}">${message.sender_name.toUpperCase()}</strong>
+                            </div>
+                            <p class="message" style="color: ${textColor}">${message.content}</p>
+                            <div style="text-align:end;">
                                 <small class="pull-right text-muted"
                                 style="color: ${timeColor}">${formatTime(message.created_at)}</small>
                             </div>
-                            <p class="message" style="color: ${textColor}">${message.content}</p>
                         </div>
                     </li>
                 `;

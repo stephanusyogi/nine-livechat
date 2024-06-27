@@ -61,16 +61,11 @@
         border-radius: 15px;
     }
 
-    .chat li .chat-body .header {
-        padding-bottom: 5px;
-        border-bottom: 1px solid #f1f5fc;
-    }
-
     .chat li .chat-body p {
-        margin: 10px 0;
+        margin: 5px 0 10px 0;
     }
 
-    .chat li.left .chat-body:before {
+    /* .chat li.left .chat-body:before {
         z-index: -1;
         position: absolute;
         top: 20px;
@@ -84,11 +79,11 @@
         -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
-    }
+    } */
 
     .chat li {
         width: 280px;
-        margin: 30px 0;
+        margin: 10px 0;
     }
 
     .chat-body p {
@@ -155,12 +150,14 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}">10:00</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor sit
                         amet,
                         consectetur adipiscing elit.</p>
+                    <div style="text-align: end">
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}">10:00</small>
+                    </div>
                 </div>
             </li>
             <li class="left speech-wrapper clearfix">
@@ -169,14 +166,16 @@
                     <div class="header">
                         <strong class="primary-font"
                             style="color: {{ $event->bubble_color_code_message_name }}">Sarah</strong>
-                        <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}"></i>12:45</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales
                         at.
                     </p>
+                    <div style="text-align: end">
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}"></i>12:45</small>
+                    </div>
                 </div>
             </li>
             <li class="left speech-wrapper clearfix">
@@ -185,12 +184,14 @@
                     <div class="header">
                         <strong class="primary-font" style="color: {{ $event->bubble_color_code_message_name }}">John
                             Doe</strong>
-                        <small class="pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}">08:00</small>
                     </div>
                     <p class="message" style="color: {{ $event->bubble_color_code_message_text }}">Lorem ipsum dolor
                         sit amet,
                         consectetur adipiscing elit.</p>
+                    <div style="text-align: end">
+                        <small class="pull-right text-muted"
+                            style="color: {{ $event->bubble_color_code_message_time }}">08:00</small>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -216,13 +217,13 @@
             const timeColor = "{{ $event->bubble_color_code_message_time }}";
             const textColor = "{{ $event->bubble_color_code_message_text }}";
 
-            const bubbleArrowStyle = `
-                .chat li.left .chat-body:before {
-                    background: ${bubbleColor};
-                    border-top: 1px solid ${bubbleColor};
-                    border-left: 1px solid ${bubbleColor};
-                }
-            `;
+            // const bubbleArrowStyle = `
+        //     .chat li.left .chat-body:before {
+        //         background: ${bubbleColor};
+        //         border-top: 1px solid ${bubbleColor};
+        //         border-left: 1px solid ${bubbleColor};
+        //     }
+        // `;
             const messageNameStyle = `
                 .primary-font {
                     color: ${nameColor};
