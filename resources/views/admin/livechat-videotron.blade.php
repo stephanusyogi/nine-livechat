@@ -195,7 +195,7 @@
             `;
 
             const style = document.createElement('style');
-            style.innerHTML = bubbleArrowStyle + messageNameStyle + messageTimeStyle + messageTextStyle;
+            style.innerHTML = messageNameStyle + messageTimeStyle + messageTextStyle;
             document.head.appendChild(style);
 
             var pusher = new Pusher('{{ env('PUSHER_APP_KEY') }}', {
