@@ -18,9 +18,8 @@
         padding: 0;
     }
 
-    small,
-    .small {
-        font-size: 12px fl
+    .time {
+        font-size: 12px;
     }
 
     .chat-message {
@@ -175,7 +174,7 @@
                 }
             `;
             const messageTimeStyle = `
-                small {
+                .time {
                     color: ${timeColor};
                 }
             `;
@@ -221,8 +220,8 @@
                             </div>
                             <p class="message" style="color: ${textColor}">${message.content}</p>
                             <div style="text-align:end;">
-                                <small class="pull-right text-muted"
-                                style="color: ${timeColor}">${formatTime(message.created_at)}</small>
+                        <p class="time pull-right text-muted"
+                                style="color: ${timeColor}">${formatTime(message.created_at)}</p>
                             </div>
                         </div>
                     </li>
