@@ -154,8 +154,8 @@
                         amet,
                         consectetur adipiscing elit.</p>
                     <div style="text-align: end">
-                        <p class="time pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}">10:00</p>
+                        <p class="time  text-muted" style="color: {{ $event->bubble_color_code_message_time }}">10:00
+                        </p>
                     </div>
                 </div>
             </li>
@@ -172,8 +172,8 @@
                         at.
                     </p>
                     <div style="text-align: end">
-                        <p class="time pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}"></i>12:45</p>
+                        <p class="time  text-muted" style="color: {{ $event->bubble_color_code_message_time }}">
+                            </i>12:45</p>
                     </div>
                 </div>
             </li>
@@ -188,8 +188,8 @@
                         sit amet,
                         consectetur adipiscing elit.</p>
                     <div style="text-align: end">
-                        <p class="time pull-right text-muted"
-                            style="color: {{ $event->bubble_color_code_message_time }}">08:00</p>
+                        <p class="time  text-muted" style="color: {{ $event->bubble_color_code_message_time }}">08:00
+                        </p>
                     </div>
                 </div>
             </li>

@@ -259,7 +259,7 @@
                             </div>
                             <p class="message" style="color: ${textColor}">${message.content}</p>
                             <div style="text-align:end;">
-                                <p class="time pull-right text-muted"
+                                <p class="time  text-muted"
                                 style="color: ${timeColor}">${formatTime(message.created_at)}</p>
                             </div>
                         </div>
