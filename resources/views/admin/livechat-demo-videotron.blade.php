@@ -82,7 +82,8 @@
     } */
 
     .chat li {
-        width: 280px;
+        /* width: 280px; */
+        max-width: 300px;
         margin: 10px 0;
     }
 
@@ -115,6 +116,7 @@
     .primary-font {
         font-size: 20px;
         font-weight: 900;
+        word-wrap: break-word;
     }
 
     .message {
@@ -122,6 +124,7 @@
         font-size: 20px;
         white-space: wrap;
         word-break: break-all;
+        word-wrap: break-word;
     }
 
     @media (max-width: 600px) {
