@@ -118,13 +118,13 @@
     }
 
     .primary-font {
-        font-size: 25px;
+        font-size: 26px;
         font-weight: 900;
         word-wrap: break-word;
     }
 
     .message {
-        font-size: 25px;
+        font-size: 26px;
         font-weight: 600;
         white-space: wrap;
         word-wrap: break-word;
@@ -232,16 +232,16 @@
                             });
                             scrollToBottom();
 
-                            const speechWrappers = document.querySelectorAll('.speech-wrapper');
+                            // const speechWrappers = document.querySelectorAll('.speech-wrapper');
 
-                            speechWrappers.forEach(wrapper => {
-                                wrapper.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    const messageId = e.currentTarget.getAttribute(
-                                        'data-message-id');
-                                    showDeleteConfirmation(messageId);
-                                });
-                            });
+                            // speechWrappers.forEach(wrapper => {
+                            //     wrapper.addEventListener('click', function(e) {
+                            //         e.preventDefault();
+                            //         const messageId = e.currentTarget.getAttribute(
+                            //             'data-message-id');
+                            //         showDeleteConfirmation(messageId);
+                            //     });
+                            // });
                         }
                     },
                     error: function() {
@@ -288,6 +288,15 @@
             // Fetch and display messages on load
             getMessagesSender();
             scrollToBottom();
+
+
+            document.getElementById('chat-container').addEventListener('click', function(e) {
+                if (e.target.closest('.speech-wrapper')) {
+                    e.preventDefault();
+                    const messageId = e.target.closest('.speech-wrapper').getAttribute('data-message-id');
+                    showDeleteConfirmation(messageId);
+                }
+            });
 
             function showDeleteConfirmation(messageId) {
                 Swal.fire({

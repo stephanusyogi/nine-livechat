@@ -112,14 +112,14 @@
     }
 
     .primary-font {
-        font-size: 25px;
+        font-size: 26px;
         font-weight: 900;
         word-wrap: break-word;
     }
 
     .message {
         font-weight: 600;
-        font-size: 25px;
+        font-size: 26px;
         white-space: wrap;
         word-wrap: break-word;
     }
