@@ -42,7 +42,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Total Administrator</h4>
-                                    <canvas id="adminChart" style="height:250px"></canvas>
+                                    <div style="height:200px">
+                                        <canvas id="adminChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +52,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Total Event</h4>
-                                    <canvas id="eventChart" style="height:250px"></canvas>
+                                    <div style="height:200px">
+                                        <canvas id="eventChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +65,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title">Event By Month</h4>
-                                    <canvas id="eventMonthChart" style="height:130px"></canvas>
+                                    <div style="height: 350px;">
+                                        <canvas id="eventMonthChart"></canvas>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,6 +106,8 @@
                         };
                         var options = {
                             responsive: true,
+                            maintainAspectRatio: false,
+                            responsive: true,
                             legend: {
                                 position: 'top',
                             },
@@ -111,7 +119,7 @@
                         new Chart(ctx, {
                             type: 'doughnut',
                             data: data,
-                            // options: options
+                            options: options
                         });
                     }
                 });
@@ -133,6 +141,8 @@
                         };
                         var options = {
                             responsive: true,
+                            responsive: true,
+                            maintainAspectRatio: false,
                             legend: {
                                 position: 'top',
                             },
@@ -169,6 +179,8 @@
                         };
                         var options = {
                             responsive: true,
+                            responsive: true,
+                            maintainAspectRatio: false,
                             scales: {
                                 y: {
                                     beginAtZero: true

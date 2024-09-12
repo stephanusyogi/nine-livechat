@@ -48,9 +48,7 @@
                                                     <th>Date & Time</th>
                                                     <th>Status<br>Started / Stopped</th>
                                                     <th>Renmark</th>
-                                                    @if ($admin->hasRole('super'))
-                                                        <th>Status<br>Active / Deleted</th>
-                                                    @endif
+                                                    <th>Status<br>Active / Deleted</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -192,131 +190,73 @@
         });
 
         function getColumns() {
-            @if ($admin->hasRole('super'))
-                var columns = [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex',
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: 'livechat',
-                        name: 'livechat',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'name',
-                        name: 'name',
-                        orderable: true,
-                        searchable: true,
-                        render: function(data, type, row) {
-                            return data.toUpperCase();
-                        }
-                    },
-                    {
-                        data: 'date_time',
-                        name: 'date_time',
-                        orderable: true,
-                        searchable: true,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'status_start_stop',
-                        name: 'status_start_stop',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'renmark',
-                        name: 'renmark',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'status_deleted',
-                        name: 'status_deleted',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                ];
-            @else
-                var columns = [{
-                        data: 'DT_RowIndex',
-                        name: 'DT_RowIndex',
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: 'livechat',
-                        name: 'livechat',
-                        orderable: false,
-                        searchable: false,
-                    },
-                    {
-                        data: 'name',
-                        name: 'name',
-                        orderable: true,
-                        searchable: true,
-                        render: function(data, type, row) {
-                            return data.toUpperCase();
-                        }
-                    },
-                    {
-                        data: 'date_time',
-                        name: 'date_time',
-                        orderable: true,
-                        searchable: true,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'renmark',
-                        name: 'renmark',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                    {
-                        data: 'status_start_stop',
-                        name: 'status_start_stop',
-                        orderable: false,
-                        searchable: false,
-                        render: function(data, type, full, meta) {
-                            return type === 'display' ? $('<div/>').html(data).text() : data;
-                        }
-                    },
-                ];
-            @endif
+            var columns = [{
+                    data: 'DT_RowIndex',
+                    name: 'DT_RowIndex',
+                    orderable: false,
+                    searchable: false,
+                },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searchable: false,
+                },
+                {
+                    data: 'livechat',
+                    name: 'livechat',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                        return type === 'display' ? $('<div/>').html(data).text() : data;
+                    }
+                },
+                {
+                    data: 'name',
+                    name: 'name',
+                    orderable: true,
+                    searchable: true,
+                    render: function(data, type, row) {
+                        return data.toUpperCase();
+                    }
+                },
+                {
+                    data: 'date_time',
+                    name: 'date_time',
+                    orderable: true,
+                    searchable: true,
+                    render: function(data, type, full, meta) {
+                        return type === 'display' ? $('<div/>').html(data).text() : data;
+                    }
+                },
+                {
+                    data: 'status_start_stop',
+                    name: 'status_start_stop',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                        return type === 'display' ? $('<div/>').html(data).text() : data;
+                    }
+                },
+                {
+                    data: 'renmark',
+                    name: 'renmark',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                        return type === 'display' ? $('<div/>').html(data).text() : data;
+                    }
+                },
+                {
+                    data: 'status_deleted',
+                    name: 'status_deleted',
+                    orderable: false,
+                    searchable: false,
+                    render: function(data, type, full, meta) {
+                        return type === 'display' ? $('<div/>').html(data).text() : data;
+                    }
+                },
+            ];
             return columns;
         }
     </script>
