@@ -205,14 +205,14 @@
                 forceTLS: true
             });
 
-            var channel = pusher.subscribe('chat');
+            var channel = pusher.subscribe('chat-' + '{{ $event->id }}');
 
             channel.bind('message.sent', function(data) {
                 renderMessage(data.message);
                 scrollToBottom();
             });
 
-            var channel = pusher.subscribe('chatDelete');
+            var channel = pusher.subscribe('chatDelete-' + '{{ $event->id }}');
 
             channel.bind('message.delete', function(data) {
                 getMessagesSender();
