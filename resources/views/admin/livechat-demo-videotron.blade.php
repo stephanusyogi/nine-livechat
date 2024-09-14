@@ -123,8 +123,7 @@
         font-weight: 600;
         font-size: 26px;
         white-space: wrap;
-        word-break: break-all;
-        word-wrap: break-word;
+        word-break: break-word;
     }
 
     @media (max-width: 600px) {
